@@ -33,7 +33,8 @@ export class UserService {
             await this.userRepository.save({
                 id: UserDto.id,
                 name: UserDto.name,
-                email: UserDto.email,
+                dob: UserDto.dob,
+                gender: UserDto.gender,
                 phonenumber: UserDto.phonenumber,
             });
             return User;
@@ -44,7 +45,8 @@ export class UserService {
             .update()
             .set({
               name: UserDto.name,
-              email: UserDto.email
+              dob: UserDto.dob,
+              gender: UserDto.gender
             })
             .where('id = :id', { id })
             .execute()
